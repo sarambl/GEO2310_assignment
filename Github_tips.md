@@ -1,3 +1,5 @@
+I've put together a few tips on git and github. You should really google git/github tutorial to learn more, but this might get you somewhat started. 
+
 ## Setup ssh connection to github:
 
 1. As soon as you login at github.uio.no with your UiO user and password, you have a github account. 
@@ -36,4 +38,9 @@ $ git commit -m 'Some message describing the current state of the project (what 
 Write to me (Sara) and send me your user name and I can add you as a collaborator. Then you can push your new branch to the repository.
 ```bash
 $ git push origin [branch-name]
+```
+## Get new changes:
+If something is updated in the branch (e.g. by a collaborator), you may want those changes to be incorporated locally:
+```bash
+$ git pull
 ```
