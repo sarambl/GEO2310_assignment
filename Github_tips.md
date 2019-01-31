@@ -1,4 +1,4 @@
-I've put together a few tips on git and github. You should really google git/github tutorial to learn more, but this might get you somewhat started. 
+I've put together a few tips on git and github. You should really google git/github tutorial to learn more, but this might get you somewhat started. See also links [here](https://uio.instructure.com/courses/18345/pages/help-with-mandatory-assignment).
 
 ## Setup ssh connection to github:
 
