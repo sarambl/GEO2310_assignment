@@ -1,0 +1,7 @@
+# Default ignored files
+/.idea/workspace.xml
+__pycache__/
+*.ipynb_checkpoints/
+/.idea/
+*.idea/
+/Boundary_layer_assignment_GEO2310/prepared_raw_data/.ipynb_checkpoints/
