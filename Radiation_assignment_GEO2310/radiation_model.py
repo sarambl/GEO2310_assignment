@@ -158,8 +158,6 @@ class RadiationModel(Grid):
                 # Heating rates SW [K/h]
                 # TODO EXERCISE 3:
                 SW_heating_rates[band][:, i_t] = 0. #Exercise 3
-                SW_heating_rates[band][:, i_t] = 60 ** 2 * DeltaF_SW_down[band][:, i_t] / (
-                            self.density[:] * Cp * self.dz)
                 if band in SW_bands_H2O:
                     SW_heating_rates['H2O_tot'][:, i_t] = SW_heating_rates['H2O_tot'][:, i_t] + \
                                                           SW_heating_rates[band][:, i_t]  # TOTAL
