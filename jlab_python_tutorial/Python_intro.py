@@ -61,6 +61,13 @@
 # %% [markdown]
 # ## Basic jupyter lab:
 
+# %%
+a = 2
+print(a)
+
+# %% [markdown]
+# # Hei Hei
+
 # %% [markdown]
 # ### Mark down cell
 # Latex formatting:
@@ -111,8 +118,6 @@ import matplotlib.pyplot as plt
 x= [1,2,3,4]
 y= np.array([2,3,2,6])
 y2 = y+1
-plt.plot(x,y)
-plt.plot(x,y2)
 # ADD xlabel, ylabel and title
 
 # %%
@@ -126,6 +131,8 @@ import pandas as pd
 from pandas.plotting import register_matplotlib_converters
 register_matplotlib_converters()
 tser = pd.read_csv('sample_data/daily-min-temperatures.csv',index_col=0,parse_dates=True)
+
+# %%
 tser = tser['Temp']
 tser_mm = tser.resample('M').mean()
 tser_sd = tser.resample('M').std()
@@ -150,8 +157,95 @@ axs[0].set_xlim('1981-1', '1991-02')
 plt.show()
 
 
-# %%
-
 # %% [markdown]
 # ## Make a function when you do things multiple times!
 # E.g. the plot above!
+
+# %%
+
+# %% [markdown]
+# # SHOW EXPORTS AS PDF
+
+# %% [markdown]
+# # Classes in python:
+
+# %% [markdown]
+# ### A very small python class introduction
+
+# %% [markdown]
+# We will be using a python class to write the model. A class can be described as the programming version of "a type of thing". Much like a human could be an instance of the class human beings, the individual instances of a python class might have different attributes (e.g. human names) and give you different responses when asked to perform certain tasks (e.g. conversation). 
+#
+# _Example:_ If you have ever used the package numpy, you might (or might not) know, that the numpy n dimension array "ndarray" is a class. It has some attributes like "shape", "dtype" (the data type) and it has some methods, like "sum" or "max"/"min". 
+
+# %%
+import numpy as np
+a = np.array([[1, 2, 3], [4, 5, 6]])  # creates an object of the numpy ndarray class
+b = np.array([[1, 4, 4], [4, 5, 6]])  # creates an object of the numpy ndarray class
+
+# %%
+type(b)
+
+# %%
+print(type(a))
+
+# %%
+a.sum()  # .sum is a method of the ndarray class
+
+# %%
+a.shape  # .shape is an attribute of the ndarray class
+
+
+# %%
+class Human:
+    def __init__(self, name, email):
+        self.name = name  # set attributes
+        self.email = email
+        return
+
+    def say_hi_to(self, name_other):  # this is a class method
+        print('Hi %s, my name is %s!\n My email is %s' % (name_other, 
+                                                          self.name, self.email))
+
+
+# %%
+sara = Human("Sara", "s.m.blichner@geo.uio.no")
+
+# %%
+sara.name  # Get attribute
+sara.email
+
+# %%
+sara.say_hi_to('students')  # call method
+
+
+# %% [markdown]
+# #### Make a subclass
+
+# %% [markdown]
+# A subclass inherets everything from the parent class (here Human) -- unless the specific attribute or method is overwritten in the subclass. 
+
+# %%
+class Student(Human):
+    def __init__(self, name, email, student_id,
+                 institution = 'UiO'):
+        # notice the default argument here --
+        # if nothing else is specified the institution will be UiO
+        self.student_id = student_id
+        self.institution = institution
+        super().__init__(name, email)
+
+    def present_myself(self):
+        print('Hi all, my name is %s and I am a student here at %s! \
+            \n My email is %s and my student id is %s'
+              % (self.name, self.institution, self.email, self.student_id))
+
+
+# %%
+student = Student('Ola', 'ola@uio.no', 9999)
+print(student.name)
+
+# %%
+student.say_hi_to('Sara')
+
+# %%
+student.present_myself()
