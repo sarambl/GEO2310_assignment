@@ -1,5 +1,9 @@
 # GEO2310_public
-Download the folder either by clikking download or by using git to clone it to your computer. 
+Download the folder either by clikking download or by using git to clone it to your computer:
+In the terminal, write:
+```bash
+git clone https://github.uio.no/sarambl/GEO2310_public.git
+```
 
 To learn the very basics of git [see here](http://rogerdudler.github.io/git-guide/).
 
